@@ -20,7 +20,7 @@ if not window:
 # Make the window's context current
 glfw.make_context_current(window)
 
-def backround_render():
+def backround_render(): #Read the fuction name
     background_texture = pygame.image.load("background_texture.png")
     background_data = pygame.image.tostring(background_texture, "RGBX", 1)
     width, height = background_texture.get_width(), background_texture.get_height()
@@ -45,7 +45,7 @@ def backround_render():
     glEnd()
     glDisable(GL_TEXTURE_2D)
 
-def render_lighting():
+def render_lighting(): #Read the fuction name
     glEnable(GL_LIGHTING)
     glEnable(GL_LIGHT0)
     glEnable(GL_DEPTH_TEST)
@@ -63,15 +63,15 @@ def render_lighting():
     glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse)
     glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular)
 
-def render_sphere():
+def render_sphere(): #Read the fuction name
     sphere = gluNewQuadric()
-    glColor3f(1.0, 0.0, 0.0)  # Set the sphere's color to red
-    gluSphere(sphere, 0.5, 32, 32)  # Create a red sphere with radius 0.5
+    glColor3f(1.0, 0.0, 0.0)
+    gluSphere(sphere, 0.5, 32, 32)
     gluDeleteQuadric(sphere)
 
-def render_scene():
+def render_scene(): #Read the fuction name
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-    glClearColor(0.0, 0.0, 0.0, 1.0)  # Set clear color to black (R, G, B, Alpha)
+    glClearColor(0.0, 0.0, 0.0, 1.0)
     glLoadIdentity()
     backround_render()
     render_lighting()

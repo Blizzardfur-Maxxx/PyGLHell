@@ -45,7 +45,6 @@ def backround_render():
     glEnd()
     glDisable(GL_TEXTURE_2D)
 
-
 def render_lighting():
     glEnable(GL_LIGHTING)
     glEnable(GL_LIGHT0)
@@ -56,7 +55,7 @@ def render_lighting():
     glMaterialfv(GL_FRONT, GL_SPECULAR, (1.0, 1.0, 1.0, 1.0))
     glMaterialfv(GL_FRONT, GL_SHININESS, 10.0)
     light_position = (5.0, 5.0, 1.0, 1.0)
-    light_ambient = (1.0, 0.0, 1.0, 1.0)
+    light_ambient = (1.0, 1.0, 1.0, 1.0)
     light_diffuse = (1.0, 1.0, 1.0, 1.0)
     light_specular = (1.0, 1.0, 1.0, 1.0)
     glLightfv(GL_LIGHT0, GL_POSITION, light_position)
@@ -74,11 +73,9 @@ def render_scene():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glClearColor(0.0, 0.0, 0.0, 1.0)  # Set clear color to black (R, G, B, Alpha)
     glLoadIdentity()
-
     backround_render()
     render_lighting()
     render_sphere()
-
     glfw.swap_buffers(window)
 
 # Main loop
